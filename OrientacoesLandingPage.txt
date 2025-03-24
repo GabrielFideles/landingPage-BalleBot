@@ -1,0 +1,157 @@
+Orientacoes para fazer a pagina da Balle Bot:
+
+html{
+    Criando e configurando arquivo html:
+        Primeiro vamos criar o aruivo do html: index.html
+        Inserir estrutura básica do html: !(tab)
+        Mudar a língua em que estará o código: lang= "pt--BR"
+        Apagar o segundo meta-dado. Porque?
+
+    Header inicial:
+        Título e descricao:
+            Colocar o título da página. O título é o que aparece no link
+            inserir meta-dado antes do título que é a descrição que aparece abaixo do título: 
+                <meta name="description" content="INSERIR DESCRIÇÃO">
+
+    Análise do prototipo:
+        Primeiro irá analisar o Figma e o protótipo e dividir em seções dentro do body da estrutura do html: 
+            Header, Main, Footer
+
+    Body:
+        Utilizar as divisões. Para o header dentro do body: <header></header>
+        Depois o corpo da seção, dentro do body da estrutura: <main></main>
+
+        Cabeçalho (Header do body):
+            Dividir com as tags
+            Iniciar com a tag de imagem para a LP da Balle Bot: <img>
+            Depois cria uma divisão de navegação, e dentro colocar os links das ancoras:
+                <nav>
+                    <a></a>
+                </nav> 
+            Ir no Figma para conferir o prototipo e pegar a imagem para inserir na tag <img>:
+                <img src="caminho"> //src e para o caminho
+            Podemos adicionar a tag "alt", que e caso a imagem nao carrege:
+                <img src="caminho" alt="Logo da Ballerini"> //src e para o caminho
+
+        Corpo (Main do body):
+            Dividir pelas section;
+            Primeira section:
+                Criar a divisao da section:
+                    <section></section>
+                Cria a divisao:
+                    <div></div>
+                    Dentro da divisao eu irei criar as secoes para os titulos:
+                        <h1></h1>
+                        <h2></h2>
+                Inserir o botao dentro da divisao, ainda dentro da section:
+                    <button></button>
+                Criar divisao para a imagem fora da divisao, ainda dentro da primeira section:
+                    <img>
+            Segunda section:
+                Inserir o terceiro titulo:
+                    <h3></h3>
+                Inserir os paragrafos para as mensagens:
+                    <p></p>
+                    Atentando-se que o paragrafo esta com um destaque em negrito. Para adicionar, basta iserir a tag <strong>:
+                        <p>Coloca o texto. E dentro do insere o texto que quer ficar com destaque em <strong>negrito</strong></p>
+                        
+    Footer:
+        Conferir o footer no Figma e exportar a imagem;
+        Exportar imagem como svg, salvar na pasta do arquivo, e incluir na tag <img>
+            <img src="caminho.svg" alt="Mensagem de erro caso a mensagem nao carrege">
+}
+
+css{
+    Não se basear nas posições do Figma
+    Pode Utilizar class para estilizar o html;
+    Para criar as classes, ira dentro dos elementos do html e ira adicionar class="nome":
+        Exemplo:
+            <img class="cabecalhoImagem" src="logo.svg" alt="Logo da comunidade Ballerini"
+    Ira fazer isso para cada section, div, nav, titulo, imagem, botao, paragrafo, etc. Ou seja, para todos os elementos
+    
+    Fonte:
+        Depois que inserir as classes, ira no Figma para olhar o modelo das fontes. Para baixar as fontes:
+            Ira no google fonts e ira digitar a fonte que esta no Figma.
+        Para olhar a fonte no Figma basta:
+            Selecionar o texto -> Inspect -> Typography -> fonte
+        Apos escolher a fonte, ira baixar a fonte no google fonts.
+        Ira adicionar as fontes no google fonts e importar o codigo no css. Basta copiar o que estiver dentro da tag <style> e colar no css, da seguinte forma:
+            @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');
+    
+    Reset do css:
+        O css pode vir com algumas pre-configuracoes, para isso serve esse pre-reset:
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                text-decoration: none;
+            }
+
+            body{
+                font-size: 100%;
+                Inserir background (Pegar no Figma)
+            }
+
+    Link do html com o css:
+        Voltar no arquivo html e adicionar dentro do <head> inicial com os metadados, e inserir o link:
+                <link rel="stylesheet" type="text/css" href="./css/style.css (esse e o caminho do arquivo)">
+
+    Estilizacao:
+        Comecar de cima para baixo, ou seja, do header, cabecalho;
+        Informa que iremos utilizar da flex-box:
+            display: flex;
+        Primeiro iremos colocar as propriedades da tag pai, o cabecalho:
+            Properties for the Parent (flex container);
+            Definir a direção dos itens: Horizontal, vertical;
+            Escolho a direcao dos itesn: aling-items;
+            Definir margens: justfy-content: space-around;
+            Definir a distancia dos icones: padding: px;
+            
+
+        Primeiro iremos colocar as propriedades da tag filo, itens do cabecalho:
+            Properties for tho Children (flex items);
+	Precisamos colocar a altura da nossa imagem do cabeçalho:
+		height: 72px;
+	Iremos ajustar as navebars do cabeçalho:
+		display: flex;
+		gap: 32px; (Distancia entre as navegações)
+	Adicionar a fonte. Pegar o código no google fonts;
+	Inserir a cor e o peso do texto;
+
+    Conteúdo:
+	Inserir borda para divisão das sections;
+	Inserir distancia do inicio do footer;
+	Inserir o display para o flex-box:
+		Display: flex;
+	Inserir a direção do flex-box:
+		flex-direction: row;
+	Centralizar os items:
+		align-items: center;
+	Dar a margem da borda e das entidades entre si:
+		justify-content: space-around;
+	Estilizar as divisões que colocamos no html. Primeiro ver as secoes que criamos;
+	Insere um . e coloca o nome da class;
+	Para os textos, precisamos colocar o flex-box;
+	Como o flex-box ele organiza em forma de linha. Precisamos ordenar em coluna
+	flex-direction: column;
+	E inserir o distanciamento, que é o gap:
+		gap: 32px;
+	Para os textos nós vamos inserir a fonte:
+		font-family: 'fonte', cursive;
+	Colocar o peso da fonte:
+		font-wight: 400;
+	Inserir o tamanho da fonte:
+		font-size: 64px;
+	Colocar a cor do texto:
+		color: COR;
+	Botão:
+		Iremos colocar a cor de fundo, altura, largura;
+		Iremos retirar a borda que não tem no Figma:
+			border: none;
+		Adicionar sombra. Copiar descrição da borda no Figma;
+	    Adicionamos o 'hover' para que ele reaja com o cursor do mouse;
+
+    Rodape:
+	    Quando só tem um elemento, podemos utilizar a divisão em bloco:
+		    display: block;
+}
